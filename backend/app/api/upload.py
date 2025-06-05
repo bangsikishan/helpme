@@ -27,7 +27,8 @@ def extract_text_from_pdf(file_stream):
 def upload():
     context = """
         Summarize the document in about 100 words and generate 5 MCQ based on the document.
-        Return the summary in one json and mcqs in another json.
+        Return the summary in one json and mcqs in another json. The format of questions should be as follows:
+        {'mcqs': [{'question': 'question', 'options': ['option1', 'option2', 'option3', 'option4'], 'answer': 'answer'}]}
     """
 
     if "file" not in request.files:
